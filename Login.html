@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>White-labelled login · Deccan Ridge ERP</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;font-family:Archivo, 'Helvetica Neue', Arial, sans-serif;color:#11191E;background:#F1F3F2;-webkit-font-smoothing:antialiased}
+a{color:#0E5E68;text-decoration:none}a:hover{color:#0A4A52}
+</style>
+<style>
+html,body{margin:0}
+body{background:#F1F3F2}
+#stage{display:flex;justify-content:center;}
+#frame{width:1440px;height:900px;flex-shrink:0;position:relative;}
+.pt-fab{position:fixed;right:18px;bottom:18px;z-index:50;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 14px;border-radius:999px;background:rgba(13,25,30,.82);color:#fff;font:600 12.5px Archivo,Arial,sans-serif;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.2);opacity:.55;transition:opacity .15s}
+.pt-fab:hover{opacity:1;color:#fff}
+.pt-toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,16px);z-index:60;padding:10px 16px;border-radius:10px;background:#0D191E;color:#fff;font:500 13px Archivo,Arial,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .18s,transform .18s}
+.pt-toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+<div id="stage"><div id="frame">
+<div style="width: 1440px; height: 900px; display: flex; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; color: #11191E; background: #FFFFFF;">
+<div style="width: 720px; height: 900px; box-sizing: border-box; background: #C4622D; padding: 56px 64px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden;">
+<div style="position: absolute; right: -120px; bottom: -120px; width: 520px; height: 520px; border-radius: 50%; border: 60px solid rgba(255,255,255,0.08);"></div>
+<div style="position: absolute; right: 80px; top: 180px; width: 220px; height: 220px; border: 2px solid rgba(255,255,255,0.14); transform: rotate(18deg);"></div>
+<div style="display: flex; align-items: center; gap: 14px; position: relative;"><span style="width: 52px; height: 52px; border-radius: 12px; background: #FFFFFF; color: #C4622D; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800;">DR</span><span style="display: flex; align-items: center; gap: 10px;"><span style="font-size: 20px; font-weight: 700; color: #FFFFFF;">Deccan Ridge</span><span style="display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border-radius: 5px; background: #FFFFFF; color: #C4622D; font-size: 13px; font-weight: 800; letter-spacing: 0.08em;">ERP</span></span></div>
+<div style="display: flex; flex-direction: column; gap: 16px; position: relative; max-width: 480px;"><h1 style="margin: 0; font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; color: #FFFFFF;">Every site, every rupee, one record.</h1><p style="margin: 0; font-size: 16px; line-height: 1.6; color: #FFF1EA;">Sign in to Deccan Ridge ERP for daily reports, approvals, stores and billing.</p></div>
+<span style="font-size: 12px; color: #FBE3D6; position: relative;">Welcome text, logo and colours set by the workspace admin</span>
+</div>
+<div style="flex-grow: 1; display: flex; align-items: center; justify-content: center;">
+<div style="width: 400px; display: flex; flex-direction: column; gap: 22px;">
+<div style="display: flex; flex-direction: column; gap: 6px;"><h2 style="margin: 0; font-size: 26px; font-weight: 700;">Sign in</h2><span style="font-size: 14px; color: #45525B;">deccanridge.[yourdomain].in</span></div>
+<div style="display: inline-flex; padding: 3px; gap: 2px; background: #EEF1F1; border-radius: 8px;"><button type="button" aria-pressed="true" style="height: 34px; padding: 0 12px; border-radius: 6px; border: none; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; background: #FFFFFF; color: #11191E; box-shadow: 0 1px 2px rgba(17,25,30,0.12);">Email</button><button type="button" aria-pressed="false" style="height: 34px; padding: 0 12px; border-radius: 6px; border: none; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; background: transparent; color: #5E6A73;">Phone OTP</button></div>
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+<label for="f101" style="font-size: 12px; font-weight: 500; color: #45525B;">Work email</label>
+<div style="display: flex; align-items: center; height: 46px; box-sizing: border-box; border: 1px solid #DCE1E1; border-radius: 8px; background: #FFFFFF; padding: 0 12px 0 12px; gap: 8px;"><input id="f101" type="text" value="anita.r@deccanridge.in" style="flex-grow: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 13px; color: #11191E; padding: 0;"></div>
+
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+<label for="f102" style="font-size: 12px; font-weight: 500; color: #45525B;">Password</label>
+<div style="display: flex; align-items: center; height: 46px; box-sizing: border-box; border: 1px solid #DCE1E1; border-radius: 8px; background: #FFFFFF; padding: 0 12px 0 12px; gap: 8px;"><input id="f102" type="text" value="••••••••••" style="flex-grow: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 13px; color: #11191E; padding: 0;"></div>
+
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between;"><div style="display: flex; align-items: center; gap: 8px;"><input id="c103" type="checkbox" checked style="width: 16px; height: 16px; margin: 0; accent-color: #0E5E68;"><label for="c103" style="font-size: 13px; color: #11191E;">Keep me signed in on this device</label></div><a href="#" style="font-size: 13px; font-weight: 600; color: #C4622D;">Forgot password?</a></div>
+<a href="Main.html" style="height: 48px; border-radius: 10px; background: #C4622D; color: #FFFFFF; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none;">Sign in</a>
+<div style="display: flex; align-items: center; gap: 10px; font-size: 12px; color: #5E6A73;"><span style="flex-grow: 1; height: 1px; background: #DCE1E1;"></span>or<span style="flex-grow: 1; height: 1px; background: #DCE1E1;"></span></div>
+<button type="button" style="height: 46px; border-radius: 10px; border: 1px solid #DCE1E1; background: #FFFFFF; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: 600; color: #11191E; cursor: pointer;">Continue with company single sign-on</button>
+<span style="font-size: 12px; color: #5E6A73; text-align: center;">Site staff can sign in with a phone number and a one-time code.</span>
+<span style="font-size: 11px; color: #5E6A73; text-align: center; padding-top: 12px;">Powered by CEP</span>
+</div></div></div>
+</div></div>
+
+<a class="pt-fab" href="index.html">All screens</a>
+<script>
+(function () {
+  var frame = document.getElementById('frame'), W = 1440, H = 900, PHONE = false;
+  function fit() {
+    var s = PHONE ? Math.min(1.15, (window.innerHeight - 48) / H) : Math.max(0.4, Math.min(1.6, document.documentElement.clientWidth / W));
+    frame.style.zoom = s;
+  }
+  fit(); window.addEventListener('resize', fit);
+  var toastEl, toastTimer;
+  function toast(msg) {
+    if (!toastEl) { toastEl = document.createElement('div'); toastEl.className = 'pt-toast'; toastEl.setAttribute('role', 'status'); document.body.appendChild(toastEl); }
+    toastEl.textContent = msg; toastEl.classList.add('on');
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { toastEl.classList.remove('on'); }, 2200);
+  }
+  var DECIDE = { Accept: '#1B6E45', Conditional: '#8F5405', Reject: '#B3261E' };
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (a && a.getAttribute('href') === '#') { e.preventDefault(); toast((a.textContent || 'This link').trim().slice(0, 40) + ' · opens in the full build'); return; }
+    var b = e.target.closest('button');
+    if (!b || b.getAttribute('data-bound') || b.disabled) return;
+    if (b.getAttribute('role') === 'switch') {
+      var on = b.getAttribute('aria-checked') !== 'true';
+      b.setAttribute('aria-checked', String(on)); b.style.background = on ? '#0E5E68' : '#C5CDCD'; b.style.justifyContent = on ? 'flex-end' : 'flex-start';
+      return;
+    }
+    if (b.hasAttribute('aria-pressed') && b.getAttribute('role') !== 'tab') {
+      var sibs = Array.prototype.filter.call(b.parentNode.children, function (x) { return x.hasAttribute('aria-pressed'); });
+      var pressed = sibs.filter(function (x) { return x.getAttribute('aria-pressed') === 'true'; });
+      if (sibs.length > 1 && pressed.length === 1 && pressed[0] !== b) {
+        var p = pressed[0], ps = p.getAttribute('style'); p.setAttribute('style', b.getAttribute('style')); b.setAttribute('style', ps);
+        p.setAttribute('aria-pressed', 'false'); b.setAttribute('aria-pressed', 'true');
+        var t = b.textContent.trim(); if (DECIDE[t]) b.style.background = DECIDE[t];
+        return;
+      }
+      if (pressed.length !== 1) { var nowOn = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', String(nowOn)); b.style.opacity = nowOn ? '1' : '0.55'; return; }
+      return;
+    }
+    var label = (b.getAttribute('aria-label') || b.textContent || 'This action').trim().replace(/\s+/g, ' ').slice(0, 40);
+    toast(label + ' · available in the full build');
+  });
+  document.addEventListener('keydown', function (e) {
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) { e.preventDefault(); location.href = 'Search.html'; }
+    if (e.key === 'Escape' && false) { history.length > 1 ? history.back() : (location.href = 'Main.html'); }
+  });
+})();
+</script>
+
+</body>
+</html>
