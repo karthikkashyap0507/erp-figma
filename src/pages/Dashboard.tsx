@@ -13,6 +13,9 @@ export default function Dashboard() {
   const role = roleByKey(useApp(s => s.role));
   const projects = useApp(s => s.projects);
   const approvals = useApp(s => s.approvals.filter(a => a.status === 'Pending' || a.status === 'Blocked'));
+  const open = approvals.filter(a => a.status === 'Pending');
+  const mine = open.filter(a => a.route.find(r => r.state === 'waiting')?.who === role.person).length;
+  const gated = approvals.length - open.length;
   const alerts = useApp(s => s.alerts);
   const nav = useNavigate();
   const running = projects.filter(p => p.status !== 'Completed');
@@ -60,7 +63,7 @@ export default function Dashboard() {
         <Stat label="Cash & bank" icon={<Landmark size={14} />} value={money(CASH_OPENING)} meta={`Low point ${money(1860000)} in W46`} />
         <Stat label="Receivable from clients" icon={<Wallet size={14} />} value={money(billed - received)} meta={`incl. ${money(retention)} retention held`} />
         <Stat label="Retention due this month" icon={<Scale size={14} />} value={money(640000)} meta="PRJ-23-087 · blocked by steel reconciliation" />
-        <Stat label="Waiting for your approval" icon={<ListChecks size={14} />} value={approvals.length} meta={<Link to="/approvals">Open approvals</Link>} />
+        <Stat label="Open approvals" icon={<ListChecks size={14} />} value={open.length} meta={<Link to="/approvals">{mine} waiting on you{gated ? ` · ${gated} held by a stage gate` : ''}</Link>} />
       </div>
 
       <div className="split-wide">
